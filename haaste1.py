@@ -1,0 +1,1 @@
+print(input("Anna salasana: ") == "".join(map(chr, {i:i + 2 for i in [117, 121, 110, 105, 116, 110, 116, 105, 116]}))[::-1])
