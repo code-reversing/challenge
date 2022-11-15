@@ -1,4 +1,4 @@
-	.intel_syntax noprefix
+intel_syntax noprefix
 	.text
 .LC0:
 	.string	"Oikein!"
@@ -10,14 +10,14 @@ main:
 	push	rbx
 	cmp	edi, 2
 	jne	.L2
-
+ 
 	mov	rdi, QWORD PTR [rsi+8]
 	call	strlen@PLT
 	cmp	eax, 7
 	jne	.L2
-
+ 
 	add	rax, rdi
-	cmp	BYTE PTR [rdi+3], 106
+	cmp	BYTE PTR [rdi+3], 104
 	jne	.L2
 	cmp	BYTE PTR [rax-7], 0156
 	jne	.L2
@@ -35,7 +35,7 @@ main:
 	jne	.L2
 	cmp	BYTE PTR [rdi+4], ah
         jne	.L2
-
+ 
 	lea	rdi, [rip+.LC0]
 	jmp	.L1
 .L2:
@@ -45,3 +45,4 @@ main:
         xor	eax, eax
 	pop	rbx
 	ret
+ 
